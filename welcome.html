@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function getdetails()
+    {
+        var user=localStorage.getItem("firstname");
+        var email=localStorage.getItem("email");
+        document.getElementById("data").innerHTML=user+"<br>"+email;
+    }
+    function LogoutValidate(){
+        localStorage.clear();
+    }
+</script>
+<body onload="getdetails()">
+    <h1>welcome to </h1>
+    <h1 id="data"></h1>
+    <form action="/" method="post">
+        <button type="submit" onclick="LogoutValidate()">Logout</button>
+    </form>
+</body>
+</html>

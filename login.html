@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Login Form</title>
+  </head>
+  <script>
+    function LoginValidate(){
+    
+    var enteremail=document.getElementById('email').value;
+    var enterpassword=document.getElementById('pwd').value;
+
+    var getEmail=localStorage.getItem('email')
+    var getPwd=localStorage.getItem('password')
+    if(enteremail==getEmail)
+    {
+        if(enterpassword==getPwd)
+        {
+            alert("login success");
+            window.location= "/welcome" ;
+            return false; 
+            
+        }
+        else
+        {
+            alert("wrong password");
+
+        }
+    }
+        else
+        {
+            alert("invalid details");
+        }
+    }
+
+  </script>
+ <body style="text-align: center;">
+    <div class="main">
+        <h1>Login Form</h1>
+        <h3>Enter your login credentials</h3>
+        <form >
+            <label for="first">
+                  Email:
+              </label>
+            <input type="text"  name="first" id="email"
+                   placeholder="Enter your Username" required>
+              <br> <br>
+            <label for="password">
+                  Password:
+              </label>
+            <input type="password"  name="password" id="pwd"
+                   placeholder="Enter your Password" required>
+              <br>  <br>
+            <button type="submit" onclick="return LoginValidate()">Submit</button>
+                <br>
+            </div>
+        </form>
+        <p>Not registered? 
+              <a href="/register"
+               style="text-decoration: none;">
+                Create an account
+            </a>
+        </p>
+    </div>
+</body>
+ </html>
